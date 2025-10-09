@@ -137,7 +137,8 @@ Assets/
 
 1. **Always reference TODO.md** for the current phase and task breakdown
 2. **Maintain the 16:9 aspect ratio** across all scenes
+3. **DO NOT create documentation files** (\*.md) unless explicitly requested by the user
 
 ## Current Project State
 
-The project is in **initial setup phase**. A basic `PlayerController.cs` exists from template but should be replaced with emotion-specific game mechanics. The actual game implementation is yet to begin—follow TODO.md Phase 1 to start.
+Phase 1 and Phase 2 are complete. The core systems (GameManager, NavigationManager, ColorPalette) and UI framework (HomeButtonUI, ProgressIndicator, EmotionPortalUI, UILayoutManager) are implemented. Scenes are set up using the SceneSetupHelper editor tool.

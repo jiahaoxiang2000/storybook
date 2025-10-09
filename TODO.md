@@ -12,11 +12,11 @@ Development task list for Unity 2D interactive storybook game.
 
 ## Phase 2: UI Framework
 
-- [ ] Design and implement UI component library (rounded buttons, portals, indicators)
-- [ ] Create page layout system (5% top nav, 90% content, 5% bottom progress)
-- [ ] Implement Home button (cloud-shaped) with fixed positioning
-- [ ] Build 4-dot progress indicator system
-- [ ] Set up color palette system (#E6D7C1, #FFF9EC base + emotion-specific colors)
+- [x] Design and implement UI component library (rounded buttons, portals, indicators)
+- [x] Create page layout system (5% top nav, 90% content, 5% bottom progress)
+- [x] Implement Home button (cloud-shaped) with fixed positioning
+- [x] Build 4-dot progress indicator system
+- [x] Set up color palette system (#E6D7C1, #FFF9EC base + emotion-specific colors)
 
 ## Phase 3: Home Page (Frame ID: Home)
 
