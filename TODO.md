@@ -4,11 +4,11 @@ Development task list for Unity 2D interactive storybook game.
 
 ## Phase 1: Project Foundation
 
-- [ ] Set up Unity 2D project structure with scene hierarchy
-- [ ] Configure 16:9 aspect ratio support
-- [ ] Implement core game manager and state machine
-- [ ] Create Moro character controller with color/expression system
-- [ ] Build navigation system (Home ↔ Mazes ↔ Credits)
+- [x] Set up Unity 2D project structure with scene hierarchy
+- [x] Configure 16:9 aspect ratio support
+- [x] Implement core game manager and state machine
+- [x] Create Moro character controller with color/expression system
+- [x] Build navigation system (Home ↔ Mazes ↔ Credits)
 
 ## Phase 2: UI Framework
 
@@ -88,18 +88,21 @@ Development task list for Unity 2D interactive storybook game.
 ## Key Technical Challenges
 
 ### Input Detection
+
 - Circular trace recognition for Anger Maze
 - Long-press with timer UI for Anger Core
 - Drag tracking for Fear Maze lantern
 - Rhythmic tap timing for Joy Maze orbs
 
 ### Visual Systems
+
 - Dynamic color transitions for Moro
 - Particle systems (air currents, rain, sparks, confetti)
 - Light radius calculation for lantern
 - Progressive color restoration in Sadness Maze
 
 ### Audio Design
+
 - Layered ambient tracks per emotion
 - Dynamic music transitions (chaos → harmony in Joy Maze)
 - Context-sensitive SFX triggers
@@ -108,11 +111,13 @@ Development task list for Unity 2D interactive storybook game.
 ## Color Reference
 
 ### Base Colors
+
 - Soft Clay: `#E6D7C1`
 - Cream: `#FFF9EC`
 - Dark Brown: `#5D4037`
 
 ### Emotion Colors
+
 - **Calm/Default**: Soft Teal `#80CBC4`
 - **Anger**: Bright Red `#FF5252` → Deep Red `#D32F2F`
 - **Sadness**: Dusty Blue `#90A4AE` → Blue-Gray `#546E7A`
@@ -120,6 +125,7 @@ Development task list for Unity 2D interactive storybook game.
 - **Joy**: Yellow `#FFEB3B` → Pink `#EC407A` (rainbow sheen)
 
 ### Interactive Elements
+
 - Grey-white (colorable): `#F5F5F5`
 - Bright Green: `#66BB6A`
 - Bright Yellow: `#FFCA28`
