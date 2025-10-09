@@ -27,14 +27,15 @@ Development task list for Unity 2D interactive storybook game.
 
 ## Phase 4: Anger Maze (Maze_Anger)
 
-- [ ] Design fiery labyrinth background with Moro in angry state (#D32F2F, #B71C1C palette)
-- [ ] Display text: "Moro is very hot and angry. Help Moro cool down!"
-- [ ] Create "Take Deep Breaths" button with visual feedback
-- [ ] Add simple cooling particle effect (blue sparkles) on button tap
-- [ ] Play calming breath audio (inhale/exhale sounds)
-- [ ] Implement tap counter (3-5 deep breaths)
-- [ ] Show completion text: "Moro feels calmer now!"
-- [ ] Auto-navigate back to Home scene after 2 seconds
+- [x] Display text: "Moro is very hot and angry. Help Moro cool down!"
+- [x] Create "Take Deep Breaths" button with visual feedback
+- [x] Add simple cooling particle effect (blue sparkles) on button tap
+- [ ] Play calming breath audio (inhale/exhale sounds) - Placeholders added, needs audio files
+- [x] Implement tap counter (3-5 deep breaths)
+- [x] Show completion text: "Moro feels calmer now!"
+- [x] Auto-navigate back to Home scene after 2 seconds
+
+**Setup Instructions**: Open Maze_Anger scene in Unity, then run `Tools > Emotion Maze > Setup Anger Maze` to create all UI elements automatically.
 
 ## Phase 5: Sadness Maze (Maze_Sadness)
 
