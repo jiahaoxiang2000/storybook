@@ -360,7 +360,7 @@ namespace EmotionMaze.Mazes
         }
 
         /// <summary>
-        /// Waits for a delay then returns to the home scene.
+        /// Waits for a delay then navigates to Credits if all mazes completed, otherwise returns to Home.
         /// </summary>
         private IEnumerator ReturnToHomeAfterDelay()
         {
@@ -368,7 +368,15 @@ namespace EmotionMaze.Mazes
 
             if (NavigationManager.Instance != null)
             {
-                NavigationManager.Instance.NavigateToHome();
+                // Check if all mazes are completed - GameManager will handle the Credits transition
+                if (GameManager.Instance != null && GameManager.Instance.AllMazesCompleted)
+                {
+                    NavigationManager.Instance.NavigateToCredits();
+                }
+                else
+                {
+                    NavigationManager.Instance.NavigateToHome();
+                }
             }
         }
         #endregion

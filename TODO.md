@@ -77,10 +77,10 @@ Development task list for Unity 2D interactive storybook game.
 
 ## Phase 8: Credits Page (Frame ID: Credits) [OPTIONAL]
 
-- [ ] Design celebration background with calm Moro (#80CBC4)
-- [ ] Add confetti particle system
-- [ ] Display "Great job helping Moro!" message
-- [ ] Auto-navigate back to Home scene after 3 seconds
+- [x] Design celebration background with calm Moro (#80CBC4)
+- [x] Add confetti particle system
+- [x] Display "Great job helping Moro!" message
+- [x] Auto-navigate back to Home scene after 3 seconds
 
 **Note**: This phase is optional. Mazes now auto-return to Home, so Credits can be added later as a special completion screen if all 4 mazes are completed. Moro is part of the background, no separate animation needed.
 
