@@ -51,14 +51,16 @@ Development task list for Unity 2D interactive storybook game.
 
 ## Phase 6: Fear Maze (Maze_Fear)
 
-- [ ] Design deep indigo forest background with Moro in fearful state (#283593, #5E35B1) with dark atmosphere
-- [ ] Display text: "It's dark and scary. Let's turn on the lights!"
-- [ ] Create 3-4 dark shadow shapes on screen
-- [ ] Add "Light" button that brightens one shadow at a time
-- [ ] Play friendly sound effect when shadow reveals (gentle "pop" or friendly giggle)
-- [ ] Transform dark shape → friendly shape (star, heart, smiley) with glow effect
-- [ ] Show completion text: "Not so scary after all!" with scene brightening
-- [ ] Auto-navigate back to Home scene after 2 seconds
+- [x] Design deep indigo forest background with Moro in fearful state (#283593, #5E35B1) with dark atmosphere
+- [x] Display text: "It's dark and scary. Let's turn on the lights!"
+- [x] Create 3-4 dark shadow shapes on screen
+- [x] Add "Light" button that brightens one shadow at a time
+- [ ] Play friendly sound effect when shadow reveals (gentle "pop" or friendly giggle) - Placeholders added, needs audio files
+- [x] Transform dark shape → friendly shape (star, heart, smiley) with glow effect
+- [x] Show completion text: "Not so scary after all!" with scene brightening
+- [x] Auto-navigate back to Home scene after 2 seconds
+
+**Setup Instructions**: Open Maze_Fear scene in Unity, then run `Tools > Emotion Maze > Setup Fear Maze` to create all UI elements automatically.
 
 ## Phase 7: Joy Maze (Maze_Joy)
 
