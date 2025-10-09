@@ -20,6 +20,7 @@ namespace EmotionMaze.Core
 
         [Header("Audio")]
         [SerializeField] private AudioClip _celebrationSound;
+        [SerializeField] private AudioClip _backgroundMusic;
 
         [Header("Timing Settings")]
         [SerializeField] private float _returnDelaySeconds = 3f;
@@ -86,6 +87,9 @@ namespace EmotionMaze.Core
             // Play celebration sound
             PlayCelebrationSound();
 
+            // Start background music
+            PlayBackgroundMusic();
+
             // Start confetti
             StartConfetti();
 
@@ -139,6 +143,24 @@ namespace EmotionMaze.Core
                 _audioSource.PlayOneShot(_celebrationSound);
             }
         }
+
+        private void PlayBackgroundMusic()
+        {
+            if (_backgroundMusic != null && _audioSource != null)
+            {
+                _audioSource.clip = _backgroundMusic;
+                _audioSource.loop = true;
+                _audioSource.Play();
+            }
+        }
+
+        private void StopBackgroundMusic()
+        {
+            if (_audioSource != null && _audioSource.isPlaying)
+            {
+                _audioSource.Stop();
+            }
+        }
         #endregion
 
         #region Navigation
@@ -149,6 +171,9 @@ namespace EmotionMaze.Core
         {
             Debug.Log($"[CreditsController] Returning to Home in {_returnDelaySeconds} seconds");
             yield return new WaitForSeconds(_returnDelaySeconds);
+
+            // Stop background music before transitioning
+            StopBackgroundMusic();
 
             if (NavigationManager.Instance != null)
             {
@@ -169,6 +194,9 @@ namespace EmotionMaze.Core
         public void ReturnToHomeNow()
         {
             StopAllCoroutines();
+
+            // Stop background music
+            StopBackgroundMusic();
 
             if (NavigationManager.Instance != null)
             {

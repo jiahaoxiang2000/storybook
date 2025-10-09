@@ -138,7 +138,7 @@ MonoBehaviour:
   _scaleAnimationSpeed: 8
   _normalColor: {r: 1, g: 0.9764706, b: 0.9254902, a: 1}
   _hoverColor: {r: 0.9019608, g: 0.84313726, b: 0.75686276, a: 1}
-  _clickSound: {fileID: 0}
+  _clickSound: {fileID: 8300000, guid: eefc89962ad326c0c9bb83db5121336d, type: 3}
   _hoverSound: {fileID: 0}
   _hideInHomeScene: 1
 --- !u!1 &7547259110017783642

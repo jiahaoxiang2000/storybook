@@ -31,6 +31,7 @@ namespace EmotionMaze.Mazes
         [Header("Audio")]
         [SerializeField] private AudioClip _dingSound;
         [SerializeField] private AudioClip _completionSound;
+        [SerializeField] private AudioClip _backgroundMusic;
 
         [Header("Gameplay Settings")]
         [SerializeField] private int _requiredTaps = 6;
@@ -168,6 +169,9 @@ namespace EmotionMaze.Mazes
             {
                 _calmingParticles.Stop();
             }
+
+            // Start background music
+            PlayBackgroundMusic();
 
             Debug.Log("[JoyMazeController] Maze initialized");
         }
@@ -410,6 +414,24 @@ namespace EmotionMaze.Mazes
                 _audioSource.PlayOneShot(_completionSound);
             }
         }
+
+        private void PlayBackgroundMusic()
+        {
+            if (_backgroundMusic != null && _audioSource != null)
+            {
+                _audioSource.clip = _backgroundMusic;
+                _audioSource.loop = true;
+                _audioSource.Play();
+            }
+        }
+
+        private void StopBackgroundMusic()
+        {
+            if (_audioSource != null && _audioSource.isPlaying)
+            {
+                _audioSource.Stop();
+            }
+        }
         #endregion
 
         #region Completion
@@ -445,6 +467,9 @@ namespace EmotionMaze.Mazes
 
             // Settle the scene (stop orbs and fade swirls)
             StartCoroutine(SettleScene());
+
+            // Stop background music
+            StopBackgroundMusic();
 
             // Play completion sound
             PlayCompletionSound();
