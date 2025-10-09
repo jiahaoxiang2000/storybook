@@ -39,14 +39,15 @@ Development task list for Unity 2D interactive storybook game.
 
 ## Phase 5: Sadness Maze (Maze_Sadness)
 
-- [ ] Create grey-blue garden background with Moro in sad state (#546E7A) and simple rain animation
-- [ ] Display text: "Moro feels sad and grey. Let's find happy thoughts!"
-- [ ] Create 3-4 grey thought bubbles with simple tap interaction
-- [ ] Add color bloom effect on tap (grey → colorful: #66BB6A, #FFCA28, #80CBC4)
-- [ ] Play gentle chime audio on each tap
-- [ ] Implement completion counter (all bubbles colored)
-- [ ] Show completion text: "Remembering good things helps!" with rain stopping
-- [ ] Auto-navigate back to Home scene after 2 seconds
+- [x] Display text: "Moro feels sad and grey. Let's find happy thoughts!"
+- [x] Create 3-4 grey thought bubbles with simple tap interaction
+- [x] Add color bloom effect on tap (grey → colorful: #66BB6A, #FFCA28, #80CBC4)
+- [ ] Play gentle chime audio on each tap - Placeholders added, needs audio files
+- [x] Implement completion counter (all bubbles colored)
+- [x] Show completion text: "Remembering good things helps!" with rain stopping
+- [x] Auto-navigate back to Home scene after 2 seconds
+
+**Setup Instructions**: Open Maze_Sadness scene in Unity, then run `Tools > Emotion Maze > Setup Sadness Maze` to create all UI elements automatically.
 
 ## Phase 6: Fear Maze (Maze_Fear)
 
