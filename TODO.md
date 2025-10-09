@@ -20,60 +20,71 @@ Development task list for Unity 2D interactive storybook game.
 
 ## Phase 3: Home Page (Frame ID: Home)
 
-- [ ] Create Emotion Town background scene
-- [ ] Implement Moro idle breathing animation
-- [ ] Build 4 emotion portals (Red/Anger, Blue/Sadness, Indigo/Fear, Rainbow/Joy)
-- [ ] Add portal pulsing animations with dynamic highlighting
-- [ ] Implement portal tap detection and scene transitions
+- [x] Create Emotion Town background scene
+- [x] Add portal pulsing animations with dynamic highlighting
+- [x] Implement portal tap detection and scene transitions
+- [x] Moro is integrated into background - no separate character needed
 
 ## Phase 4: Anger Maze (Maze_Anger)
 
-- [ ] Design fiery labyrinth environment (#D32F2F, #B71C1C palette)
-- [ ] Implement cool air current particle system (blue ribbons)
-- [ ] Create circular trace detection for guiding airflow
-- [ ] Build Anger Core with aggressive pulsation animation
-- [ ] Implement long-press (3 sec) mechanic with visual/audio feedback
-- [ ] Add spark extinguishing mechanics and rainbow bridge exit
+- [ ] Design fiery labyrinth background with Moro in angry state (#D32F2F, #B71C1C palette)
+- [ ] Display text: "Moro is very hot and angry. Help Moro cool down!"
+- [ ] Create "Take Deep Breaths" button with visual feedback
+- [ ] Add simple cooling particle effect (blue sparkles) on button tap
+- [ ] Play calming breath audio (inhale/exhale sounds)
+- [ ] Implement tap counter (3-5 deep breaths)
+- [ ] Show completion text: "Moro feels calmer now!"
+- [ ] Auto-navigate back to Home scene after 2 seconds
 
 ## Phase 5: Sadness Maze (Maze_Sadness)
 
-- [ ] Create grey-blue garden scene (#546E7A) with rain animation
-- [ ] Implement colorable object system (trees, flowers, clouds)
-- [ ] Build tap-to-color mechanic with color restoration (#66BB6A, #FFCA28)
-- [ ] Add progressive rain reduction logic
-- [ ] Create sky clearing and sunlight breakthrough effects
+- [ ] Create grey-blue garden background with Moro in sad state (#546E7A) and simple rain animation
+- [ ] Display text: "Moro feels sad and grey. Let's find happy thoughts!"
+- [ ] Create 3-4 grey thought bubbles with simple tap interaction
+- [ ] Add color bloom effect on tap (grey → colorful: #66BB6A, #FFCA28, #80CBC4)
+- [ ] Play gentle chime audio on each tap
+- [ ] Implement completion counter (all bubbles colored)
+- [ ] Show completion text: "Remembering good things helps!" with rain stopping
+- [ ] Auto-navigate back to Home scene after 2 seconds
 
 ## Phase 6: Fear Maze (Maze_Fear)
 
-- [ ] Design deep indigo forest (#283593) with shadow system
-- [ ] Implement draggable lantern mechanic with light radius
-- [ ] Create shadow reveal system (transform scary → friendly)
-- [ ] Build dynamic lighting that follows player input
-- [ ] Add reassuring sound triggers on shadow revelation
+- [ ] Design deep indigo forest background with Moro in fearful state (#283593, #5E35B1) with dark atmosphere
+- [ ] Display text: "It's dark and scary. Let's turn on the lights!"
+- [ ] Create 3-4 dark shadow shapes on screen
+- [ ] Add "Light" button that brightens one shadow at a time
+- [ ] Play friendly sound effect when shadow reveals (gentle "pop" or friendly giggle)
+- [ ] Transform dark shape → friendly shape (star, heart, smiley) with glow effect
+- [ ] Show completion text: "Not so scary after all!" with scene brightening
+- [ ] Auto-navigate back to Home scene after 2 seconds
 
 ## Phase 7: Joy Maze (Maze_Joy)
 
-- [ ] Create chaotic rainbow backdrop with swirling colors
-- [ ] Implement bouncing overstimulation orbs system
-- [ ] Build rhythmic tap detection mechanic
-- [ ] Create orb capture and harmonization system
-- [ ] Add visual/audio transition from chaos → harmony
+- [ ] Create rainbow backdrop with Moro in overstimulated state (#FFEB3B, #EC407A) and animated swirls
+- [ ] Display text: "Too much excitement! Let's find calm."
+- [ ] Create 5-6 bouncing colorful orbs with simple animations
+- [ ] Add "Calm Down" button with tap interaction
+- [ ] Play soft "ding" audio on each tap, orbs slow down gradually
+- [ ] Implement tap counter to calm all orbs (5-6 taps)
+- [ ] Show completion text: "Finding calm in the fun!" with colors settling
+- [ ] Auto-navigate back to Home scene after 2 seconds
 
-## Phase 8: Credits Page (Frame ID: Credits)
+## Phase 8: Credits Page (Frame ID: Credits) [OPTIONAL]
 
-- [ ] Design celebration scene with calm Moro (#80CBC4)
-- [ ] Implement Moro happy dance animation
+- [ ] Design celebration background with calm Moro (#80CBC4)
 - [ ] Add confetti particle system
-- [ ] Create Replay button (circular arrow)
-- [ ] Build navigation back to Home
+- [ ] Display "Great job helping Moro!" message
+- [ ] Auto-navigate back to Home scene after 3 seconds
+
+**Note**: This phase is optional. Mazes now auto-return to Home, so Credits can be added later as a special completion screen if all 4 mazes are completed. Moro is part of the background, no separate animation needed.
 
 ## Phase 9: Audio & Assets
 
-- [ ] Source/create ambient music for each emotion
-- [ ] Implement SFX (crackling fire, drizzle, wind, chimes)
-- [ ] Create hand-drawn texture assets for all scenes
-- [ ] Design Moro character sprites (multiple emotional states)
-- [ ] Build particle effects (sparks, rain, confetti, glow)
+- [ ] Source/create simple background music for each emotion maze
+- [ ] Implement basic SFX (breath sounds, chimes, friendly pops, dings)
+- [ ] Create background images for each maze (with Moro integrated: Home, Anger, Sadness, Fear, Joy, Credits)
+- [ ] Build simple particle effects (sparkles, rain, glow, color blooms)
+- [ ] Create UI elements (thought bubbles, shadow shapes, friendly shapes, orbs)
 
 ## Phase 10: Polish & Testing
 
@@ -89,24 +100,23 @@ Development task list for Unity 2D interactive storybook game.
 
 ### Input Detection
 
-- Circular trace recognition for Anger Maze
-- Long-press with timer UI for Anger Core
-- Drag tracking for Fear Maze lantern
-- Rhythmic tap timing for Joy Maze orbs
+- Simple button tap detection with visual feedback
+- Tap counter systems for completion tracking
+- UI state management for button interactions
 
 ### Visual Systems
 
-- Dynamic color transitions for Moro
-- Particle systems (air currents, rain, sparks, confetti)
-- Light radius calculation for lantern
-- Progressive color restoration in Sadness Maze
+- Simple particle effects (sparkles, rain, glow, color blooms)
+- Progressive animation speed changes (bouncing orbs slowing down)
+- Color transformation effects (grey → colorful, dark → bright)
+- Scene transitions and background changes (Moro states are baked into backgrounds)
 
 ### Audio Design
 
-- Layered ambient tracks per emotion
-- Dynamic music transitions (chaos → harmony in Joy Maze)
-- Context-sensitive SFX triggers
-- Calming breath sounds for long-press feedback
+- Simple background music tracks per emotion
+- Basic SFX timing (breath sounds, chimes, pops, dings)
+- Audio feedback on button interactions
+- Volume/pitch variations for completion states
 
 ## Color Reference
 

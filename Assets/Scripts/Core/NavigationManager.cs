@@ -92,9 +92,19 @@ namespace EmotionMaze.Core
         /// </summary>
         public void NavigateToHome()
         {
+            // Reset to Calm emotion BEFORE transitioning home
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.SetEmotion(EmotionType.Calm);
+            }
+
             LoadScene(SCENE_HOME, () =>
             {
-                GameManager.Instance.ReturnToHome();
+                // Just set game state, emotion already set above
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.SetGameState(GameState.Home);
+                }
             });
         }
 
@@ -111,9 +121,18 @@ namespace EmotionMaze.Core
                 return;
             }
 
+            // Set emotion BEFORE scene transition so Moro updates immediately
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.SetEmotion(emotion);
+            }
+
             LoadScene(sceneName, () =>
             {
-                GameManager.Instance.EnterMaze(emotion);
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.EnterMaze(emotion);
+                }
             });
         }
 
@@ -124,7 +143,10 @@ namespace EmotionMaze.Core
         {
             LoadScene(SCENE_CREDITS, () =>
             {
-                GameManager.Instance.SetGameState(GameState.Credits);
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.SetGameState(GameState.Credits);
+                }
             });
         }
 

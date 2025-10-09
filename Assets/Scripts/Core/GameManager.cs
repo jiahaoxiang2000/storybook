@@ -175,7 +175,8 @@ namespace EmotionMaze.Core
         }
 
         /// <summary>
-        /// Marks a maze as completed and transitions to the credits scene.
+        /// Marks a maze as completed and transitions to credits only if all mazes are done.
+        /// Otherwise returns to home.
         /// </summary>
         /// <param name="emotion">The completed maze's emotion</param>
         public void CompleteMaze(EmotionType emotion)
@@ -208,8 +209,17 @@ namespace EmotionMaze.Core
                 OnMazeCompleted?.Invoke(emotion);
             }
 
-            // Transition to credits
-            SetGameState(GameState.Credits);
+            // Only transition to credits if ALL four mazes are completed
+            if (AllMazesCompleted)
+            {
+                Debug.Log("[GameManager] All mazes completed! Transitioning to Credits");
+                SetGameState(GameState.Credits);
+            }
+            else
+            {
+                Debug.Log("[GameManager] Maze completed, returning to Home");
+                ReturnToHome();
+            }
         }
 
         /// <summary>
