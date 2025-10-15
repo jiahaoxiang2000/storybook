@@ -6,23 +6,38 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Home.unity
-    guid: aa7c030790f97bf819385b9c9f5a4065
-  - enabled: 1
+    path: Assets/Scenes/home.unity
+    guid: 2a7f861b4340c862c9c0c072b6aae03f
+  - enabled: 0
     path: Assets/Scenes/Maze_Anger.unity
     guid: 4053ff0a5c9b3839fab0d46f23355158
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Maze_Sadness.unity
     guid: 9c3f756ae3ee3a62bb72c7669f6da0ff
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Maze_Fear.unity
     guid: 1810b1cd656c8d25199a05cca6ff3f3e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Maze_Joy.unity
     guid: c9df0e7e04d7e93738a4fca3f9aebb64
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Credits.unity
     guid: 811f20bcb867ccc97a17fcd3f09666ca
+  - enabled: 1
+    path: Assets/Scenes/One.unity
+    guid: bb45719a6b99ffae7979b33abb2d2e84
+  - enabled: 1
+    path: Assets/Scenes/Two.unity
+    guid: 83a70c87bdd9d2af09f80d787f556a37
+  - enabled: 1
+    path: Assets/Scenes/Four.unity
+    guid: 0fdd8982a9df39bccb2f82ba4726a235
+  - enabled: 1
+    path: Assets/Scenes/Three.unity
+    guid: 32d513953355978fc89d1c5d41ba8cf0
+  - enabled: 1
+    path: Assets/Scenes/final.unity
+    guid: 0d46805a32374ef7aa8f7b9afdacebfa
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -6,13 +6,14 @@ Creates a markdown file with text and image references.
 """
 
 import os
+import re
 from pathlib import Path
+
 from docx import Document
 from docx.oxml import CT_P, CT_Tbl
 from docx.oxml.text.paragraph import CT_P
-from docx.table import _Cell, Table
+from docx.table import Table, _Cell
 from docx.text.paragraph import Paragraph
-import re
 
 
 def iter_block_items(parent):
@@ -22,7 +23,7 @@ def iter_block_items(parent):
     """
     from docx.oxml.xmlchemy import BaseOxmlElement
 
-    if hasattr(parent, 'element'):
+    if hasattr(parent, "element"):
         parent_elm = parent.element.body
     else:
         parent_elm = parent
@@ -34,7 +35,11 @@ def iter_block_items(parent):
             yield None, Table(child, parent)
 
 
-def extract_text_and_images(docx_path: str, output_dir: str = "extracted", md_output: str = "extracted_content.md"):
+def extract_text_and_images(
+    docx_path: str,
+    output_dir: str = "extracted",
+    md_output: str = "extracted_content.md",
+):
     """
     Extract all text and images from a DOCX file and save to markdown.
 
@@ -71,20 +76,20 @@ def extract_text_and_images(docx_path: str, output_dir: str = "extracted", md_ou
             # Determine file extension from content type
             content_type = rel.target_part.content_type
             ext_map = {
-                'image/png': '.png',
-                'image/jpeg': '.jpg',
-                'image/jpg': '.jpg',
-                'image/gif': '.gif',
-                'image/bmp': '.bmp',
-                'image/tiff': '.tiff'
+                "image/png": ".png",
+                "image/jpeg": ".jpg",
+                "image/jpg": ".jpg",
+                "image/gif": ".gif",
+                "image/bmp": ".bmp",
+                "image/tiff": ".tiff",
             }
-            ext = ext_map.get(content_type, '.png')
+            ext = ext_map.get(content_type, ".png")
 
             # Save image
             image_filename = f"image_{image_count}{ext}"
             image_path = output_path / image_filename
 
-            with open(image_path, 'wb') as f:
+            with open(image_path, "wb") as f:
                 f.write(image)
 
             # Store the relationship ID to filename mapping
@@ -105,24 +110,28 @@ def extract_text_and_images(docx_path: str, output_dir: str = "extracted", md_ou
         if para is not None:
             # Check if paragraph contains images
             for run in para.runs:
-                if 'graphic' in run._element.xml:
+                if "graphic" in run._element.xml:
                     # Extract image references from the run
-                    for blip in run._element.xpath('.//a:blip'):
-                        embed = blip.get('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed')
+                    for blip in run._element.xpath(".//a:blip"):
+                        embed = blip.get(
+                            "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed"
+                        )
                         if embed and embed in image_map:
                             image_filename = image_map[embed]
-                            markdown_content.append(f"![{image_filename}]({output_dir}/{image_filename})\n\n")
+                            markdown_content.append(
+                                f"![{image_filename}]({output_dir}/{image_filename})\n\n"
+                            )
                             print(f"Image reference added: {image_filename}")
 
             # Add paragraph text
             if para.text.strip():
                 # Check if it's a heading based on style
                 style_name = para.style.name if para.style else ""
-                if 'Heading 1' in style_name:
+                if "Heading 1" in style_name:
                     markdown_content.append(f"# {para.text}\n\n")
-                elif 'Heading 2' in style_name:
+                elif "Heading 2" in style_name:
                     markdown_content.append(f"## {para.text}\n\n")
-                elif 'Heading 3' in style_name:
+                elif "Heading 3" in style_name:
                     markdown_content.append(f"### {para.text}\n\n")
                 else:
                     markdown_content.append(f"{para.text}\n\n")
@@ -137,12 +146,14 @@ def extract_text_and_images(docx_path: str, output_dir: str = "extracted", md_ou
                     # Add header separator after first row
                     if row_idx == 0:
                         num_cells = len(row.cells)
-                        markdown_content.append(f"| {' | '.join(['---'] * num_cells)} |\n")
+                        markdown_content.append(
+                            f"| {' | '.join(['---'] * num_cells)} |\n"
+                        )
             markdown_content.append("\n")
 
     # Write markdown file
     md_path = Path(md_output)
-    with open(md_path, 'w', encoding='utf-8') as f:
+    with open(md_path, "w", encoding="utf-8") as f:
         f.writelines(markdown_content)
 
     print(f"\nMarkdown file created: {md_path.absolute()}")
@@ -153,7 +164,7 @@ def extract_text_and_images(docx_path: str, output_dir: str = "extracted", md_ou
 
 if __name__ == "__main__":
     # Path to the document
-    docx_file = "~/Downloads/PROG2006_Ass2_Report_lishiya.docx"
+    docx_file = "~/Downloads/PROG2006_Ass2_Report_wangnan.docx"
 
     # Output directory for images (relative to current directory)
     output_directory = "extracted"
