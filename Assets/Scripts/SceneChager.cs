@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class SceneChanger : MonoBehaviour
 {
-    [SerializeField] private Object sceneAsset;  // Drag scene here in Inspector
-    
+    [SerializeField] private string sceneName;  // Enter scene name as string
+
     private void Start()
     {
         Button button = GetComponent<Button>();
@@ -14,16 +14,16 @@ public class SceneChanger : MonoBehaviour
             button.onClick.AddListener(LoadScene);
         }
     }
-    
+
     public void LoadScene()
     {
-        if (sceneAsset != null)
+        if (!string.IsNullOrEmpty(sceneName))
         {
-            SceneManager.LoadScene(sceneAsset.name);
+            SceneManager.LoadScene(sceneName);
         }
         else
         {
-            Debug.LogWarning("No scene assigned!");
+            Debug.LogWarning("No scene name assigned!");
         }
     }
 }
